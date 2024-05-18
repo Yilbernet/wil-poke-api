@@ -1,0 +1,41 @@
+.homepage {
+    width: 100%;
+    min-height: calc(100vh - 240px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: url('../../../assets/pokeback.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.homepage__img {
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+.homepage__gif {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.homepage__gif-1 {
+    width: 100%;
+    top: -75%;
+    max-height: none;
+    height: 300px;
+}
+.homepage__gif-2 {
+    top: 75%;
+}
+.homepage__title {
+    color: red;
+}
+.homepage__form {
+    display: flex;
+    z-index: 10;
+}
+.homepage__form button {
+    padding: 5px 15px;
+}

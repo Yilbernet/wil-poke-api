@@ -1,0 +1,31 @@
+.pokedex {
+    width: 100%;
+    min-height: calc(100vh - 240px);
+}
+.pokedex__title {
+    padding: 25px;
+    width: 85%;
+}
+.pokedex__title span {
+    color: red;
+}
+.pokedex__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+.pokedex__form {
+    display: flex;
+}
+.pokedex__container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.pokedex__error {
+    text-align: center;
+    padding-bottom: 25px;
+}

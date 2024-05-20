@@ -49,8 +49,6 @@ const Pokedex = () => {
     return pokemons?.results.filter(pokeSearch).slice(start, end);
   }
 
-  console.log(pokemons?.results);
-
   return (
     <section className='pokedex'>
       <h2 className='pokedex__title'><span>Welcome {trainer},</span> here you can find your favorite pokemon, let's go!</h2>

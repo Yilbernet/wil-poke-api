@@ -10,8 +10,11 @@ const PokePages = ({ total }) => {
   const dispatch = useDispatch();
 
   const handleLess = (num) => {
-    if (page > num) {
-      dispatch(setPage(page - num));
+    const less = page - num;
+    if (less > 0) {
+      dispatch(setPage(less));
+    } else if (total + less > 0) {
+        dispatch(setPage(total + less));
     } else {
       dispatch(setPage(total));
     }
@@ -19,8 +22,11 @@ const PokePages = ({ total }) => {
   }
 
   const handlePlus = (num) => {
-    if (page <= total - num) {
-      dispatch(setPage(page + num));
+    const plus = page + num;
+    if (plus <= total) {
+      dispatch(setPage(plus));
+    } else if (plus - total <= total) {
+      dispatch(setPage(plus - total));
     } else {
       dispatch(setPage(1));
     }

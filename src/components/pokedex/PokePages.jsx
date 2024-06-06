@@ -16,7 +16,7 @@ const PokePages = ({ total }) => {
     } else if (total + less > 0) {
         dispatch(setPage(total + less));
     } else {
-      dispatch(setPage(total));
+      dispatch(setPage(1));
     }
     scroll(0, 0);
   }
@@ -28,7 +28,7 @@ const PokePages = ({ total }) => {
     } else if (plus - total <= total) {
       dispatch(setPage(plus - total));
     } else {
-      dispatch(setPage(1));
+      dispatch(setPage(total));
     }
     scroll(0, 0);
   }

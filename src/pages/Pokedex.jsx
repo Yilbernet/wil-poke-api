@@ -10,7 +10,7 @@ import { setPage } from '../store/slices/page.slice';
 const Pokedex = () => {
 
   const [inputValue, setInputValue] = useState('');
-  const [pokemons, getPokemons, getType] = useFetch();
+  const [pokemons, getPokemons, getType, isLoading, hasError] = useFetch();
 
   const trainer = useSelector(store => store.trainer);
   const page = useSelector(store => store.page);
@@ -51,37 +51,59 @@ const Pokedex = () => {
 
   return (
     <section className='pokedex'>
-      <h2 className='pokedex__title'><span>Welcome {trainer},</span> here you can find your favorite pokemon, let's go!</h2>
-      <div className='pokedex__filters'>
-        <form className='pokedex__form' onSubmit={handleSubmit}>
-          <input ref={textInput} type="text" />
-          <button>Search</button>
-        </form>
-        <PokeSelect/>
-      </div>
       {
-        total > 1 &&
-        <PokePages
-          total={total}
-        />
-      }
-      <div className='pokedex__container'>
-        {
-          pagination()?.map((poke) => (
-            <PokeCard
-              key={poke.url}
-              url={poke.url}
-            />
-          ))
-        }
-      </div>
-      {
-        total > 1 ?
-        <PokePages
-          total={total}
-        />
-        :
-        <h2 className='pokedex__error'>There are no more pokemons</h2>
+        isLoading ?
+          <figure className='pokeload__img'>
+            <img src="../../public/assets/pokeload.gif" alt="pokeLoading" />
+            <figcaption>Loading...</figcaption>
+          </figure>
+          :
+          <>
+            <h2 className='pokedex__title'><span>Welcome {trainer},</span> here you can find your favorite pokemon, let's go!</h2>
+            <div className='pokedex__filters'>
+              <form className='pokedex__form' onSubmit={handleSubmit}>
+                <input ref={textInput} type="text" />
+                <button>Search</button>
+              </form>
+              <PokeSelect/>
+            </div>
+            <div>
+              {
+                hasError ?
+                  <div className='pokedex__error'>
+                    <h2>something went wrong</h2>
+                    <h3>please try again more late</h3>
+                  </div>
+                  :
+                  <>
+                    {
+                      total > 1 &&
+                      <PokePages
+                        total={total}
+                      />
+                    }
+                    <div className='pokedex__container'>
+                      {
+                        pagination()?.map((poke) => (
+                          <PokeCard
+                            key={poke.url}
+                            url={poke.url}
+                          />
+                        ))
+                      }
+                    </div>
+                    {
+                      total > 1 ?
+                      <PokePages
+                        total={total}
+                      />
+                      :
+                      <h2 className='pokedex__pages'>There are no more pokemons</h2>
+                    }
+                  </>
+              }
+            </div>
+          </>
       }
     </section>
   )

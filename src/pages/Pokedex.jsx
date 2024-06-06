@@ -19,6 +19,7 @@ const Pokedex = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setInputValue('');
     if (selectValue) {
       getType(selectValue);
     } else {

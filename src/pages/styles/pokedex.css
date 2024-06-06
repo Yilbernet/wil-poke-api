@@ -15,13 +15,14 @@
     font-weight: 900;
 }
 .pokedex__title {
-    padding: 25px;
+    padding: 25px 0;
     width: 85%;
 }
 .pokedex__title span {
     color: red;
 }
 .pokedex__filters {
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

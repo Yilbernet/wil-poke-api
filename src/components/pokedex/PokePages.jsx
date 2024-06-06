@@ -35,13 +35,13 @@ const PokePages = ({ total }) => {
 
   return (
     <div className='pokepages'>
-        <button onClick={() => {handleLess(55)}}>{'<<<'}</button>
-        <button onClick={() => {handleLess(8)}}>{'<<'}</button>
-        <button onClick={() => {handleLess(1)}}>{'<'}</button>
+        <button className='pokepages__btn less__third' onClick={() => {handleLess(55)}}>{'<<<'}</button>
+        <button className='pokepages__btn less__second' onClick={() => {handleLess(8)}}>{'<<'}</button>
+        <button className='pokepages__btn less__first' onClick={() => {handleLess(1)}}>{'<'}</button>
         <span> {page} / {total} </span>
-        <button onClick={() => {handlePlus(1)}}>{'>'}</button>
-        <button onClick={() => {handlePlus(8)}}>{'>>'}</button>
-        <button onClick={() => {handlePlus(55)}}>{'>>>'}</button>
+        <button className='pokepages__btn plus__first' onClick={() => {handlePlus(1)}}>{'>'}</button>
+        <button className='pokepages__btn plus__second' onClick={() => {handlePlus(8)}}>{'>>'}</button>
+        <button className='pokepages__btn plus__third' onClick={() => {handlePlus(55)}}>{'>>>'}</button>
     </div>
   )
 }

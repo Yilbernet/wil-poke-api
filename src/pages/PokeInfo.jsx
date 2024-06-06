@@ -109,8 +109,8 @@ const PokeInfo = () => {
                 <ul className='pokeinfo__stats'>
                   {
                     pokemon?.stats.map(stat => (
-                      <li key={stat.stat.url}><span>{stat.stat.name}</span><span>{stat.base_stat}/250</span>
-                      <div className='stats__bar'><div style={{width: `${stat.base_stat/2.5}%`}} className='stats__prog'></div></div></li>
+                      <li key={stat.stat.url}><span>{stat.stat.name}</span><span>{stat.base_stat}/255</span>
+                      <div className='stats__bar'><div style={{width: `${stat.base_stat/2.55}%`}} className='stats__prog'></div></div></li>
                     ))
                   }
                 </ul>

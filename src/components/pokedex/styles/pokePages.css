@@ -5,6 +5,44 @@
     display: flex;
     gap: 10px;
 }
-.pokepages button {
+.pokepages__btn {
     border-radius: 5px;
+    position: relative;
+}
+.pokepages__btn::after {
+    width: max-content;
+    background-color: black;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    padding: 2px 7px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: bottom .5s,
+                opacity .5s;
+}
+.pokepages__btn:hover::after {
+    bottom: 160%;
+    opacity: 1;
+    transition: bottom .5s,
+                opacity .5s;
+}
+.less__first::after {
+    content: '- 1';
+}
+.plus__first::after {
+    content: '+ 1';
+}
+.less__second::after {
+    content: '- 8';
+}
+.plus__second::after {
+    content: '+ 8';
+}
+.less__third::after {
+    content: '- 55';
+}
+.plus__third::after {
+    content: '+ 55';
 }

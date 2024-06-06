@@ -19,7 +19,7 @@ const useFetch = () => {
             .finally(() => {
                 setTimeout(() => {
                     setIsLoading(false);
-                }, 500);
+                }, 100);
             });
     }
     const getType = (url) => {
@@ -38,7 +38,7 @@ const useFetch = () => {
             .finally(() => {
                 setTimeout(() => {
                     setIsLoading(false);
-                }, 500);
+                }, 100);
             });
     }
     return [apiData, getApi, getType, isLoading, hasError];

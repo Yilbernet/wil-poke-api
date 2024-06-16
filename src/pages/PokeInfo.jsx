@@ -43,7 +43,7 @@ const PokeInfo = () => {
       {
         isLoading ?
         <figure className='pokeload__img'>
-          <img src="../../public/assets/pokeload.gif" alt="pokeLoading" />
+          <img src="../../assets/pokeload.gif" alt="pokeLoading" />
           <figcaption>Loading...</figcaption>
         </figure>
         :
